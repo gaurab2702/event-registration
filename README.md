@@ -11,11 +11,26 @@ First, you need to clone this repository
 
 ```git clone git@github.com:gaurab2702/event-registration.git```
 
+Create Database with query ``` create database event_registration; ```
+
 After that, you can run the service
 
 ```
 cd event-registration
 mvn spring-boot:run
+```
+
+## Sample Curl with Authorization
+
+```
+curl --location 'http://localhost:8080/event-registration/event/' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhcHAubmFtZSIsInN1YiI6ImFkbWluIiwiYXVkIjoid2ViIiwiaWF0IjoxNzU2NDA3MzI2LCJleHAiOjE3OTI0MDczMjZ9.eVV8etuSykbxHBZeQWOOGyi6lAAOvn0VwG5gyE96iW5aHkB0TKuPLU0MYHwUU7sekEX2Z4gxjPcSUG3pO4TaZg' \
+--header 'Content-Type: application/json' \
+--data '{
+  "name": "Tech Conference",
+  "location": "New York City",
+  "date": "2025-09-15T10:30:00"
+}'
 ```
 
 # Endpoints
